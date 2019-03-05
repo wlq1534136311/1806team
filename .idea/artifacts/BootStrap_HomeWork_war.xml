@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="BootStrap-HomeWork:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="BootStrap-HomeWork.war">
+      <element id="artifact" artifact-name="BootStrap-HomeWork:war exploded" />
+    </root>
+  </artifact>
+</component>

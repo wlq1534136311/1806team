@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 全局功能配置 -->
+	<settings>
+
+		<!--开启驼峰原则-->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+
+
+	<!-- 别名配置 -->
+	<typeAliases>
+		<package name="com.qf.admin.model"/>
+	</typeAliases>
+	
+</configuration>

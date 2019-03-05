@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.admin.dao.StudentMapper">
+       <!--查询所有学生信息-->
+       <select id="selectAll" resultType="com.qf.admin.model.Student">
+              select id,name,sex from student2  where 1=1 <if test="search!=null and search!=''">
+           and name like "%${search}%"
+       </if> limit #{offset},#{limit}
+       </select>
+        <!--查询总条数-->
+        <select id="selectAllCount" resultType="java.lang.Integer">
+            SELECT count(*) from student2 where 1=1 <if test="search!=null and search!=''">
+            and name like "%${search}%"
+        </if>
+        </select>
+
+        <!--增-->
+        <insert id="addStudent" parameterType="com.qf.admin.model.Student">
+            insert into student2  VALUES ( #{id},#{name},#{sex});
+        </insert>
+        <!--删-->
+        <delete id="dropStudent">
+            DELETE  FROM  student2 WHERE id = #{id};
+        </delete>
+        <!--改-->
+        <update id="updateStudent">
+           UPDATE student2 SET
+		   name=#{name},sex=#{sex}
+		   WHERE id = #{id}
+        </update>
+</mapper>
